@@ -1,0 +1,21 @@
+<!-- templates/team_detail.html -->
+{% extends "base.html" %}
+{% block content %}
+<div class="stats-card">
+    <h2>{{ team.city }} {{ team.name }}</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Season Record</h4>
+            <p>{{ team.wins }} Wins - {{ team.losses }} Losses</p>
+        </div>
+        <div class="col-md-6">
+            <h4>Recent Games</h4>
+            <ul>
+                {% for game in games %}
+                <li>{{ game.date }}: {{ game.home_team.name }} {{ game.home_score }} - {{ game.away_score }} {{ game.away_team.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

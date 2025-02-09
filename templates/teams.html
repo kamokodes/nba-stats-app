@@ -1,0 +1,15 @@
+<!-- templates/teams.html -->
+{% extends "base.html" %}
+{% block content %}
+<h2>Teams</h2>
+<div class="row">
+    {% for team in teams %}
+    <div class="col-md-4">
+        <div class="stats-card">
+            <h4><a href="/team/{{ team.id }}">{{ team.city }} {{ team.name }}</a></h4>
+            <p>Record: {{ team.wins }}-{{ team.losses }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

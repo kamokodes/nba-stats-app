@@ -1,0 +1,16 @@
+<!-- templates/players.html -->
+{% extends "base.html" %}
+{% block content %}
+<h2>Players</h2>
+<div class="row">
+    {% for player in players %}
+    <div class="col-md-4">
+        <div class="stats-card">
+            <h4><a href="/player/{{ player.id }}">{{ player.name }}</a></h4>
+            <p>Points: {{ player.points }} | Rebounds: {{ player.rebounds }} | Assists: {{ player.assists }}</p>
+            <small>Team: {{ player.team.name if player.team else 'N/A' }}</small>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
